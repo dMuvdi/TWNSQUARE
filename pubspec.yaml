@@ -1,0 +1,62 @@
+name: twn_square
+description: "A new Flutter project."
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.3 <4.0.0'
+
+scripts:
+  gen: "fluttergen -c pubspec.yaml"
+  br: dart run build_runner build
+  fr: dart format .
+
+dependencies:
+  cupertino_icons: ^1.0.6
+  flutter_svg: ^2.0.5
+  get: ^4.6.6
+  firebase_core: ^2.15.1
+  cloud_firestore: ^4.9.0
+  flutter:
+    sdk: flutter
+  
+
+dev_dependencies:
+  flutter_gen_runner: ^5.3.1
+  build_runner: ^2.4.6
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  flutter_secure_storage: ^9.0.0
+  uuid: ^4.4.2
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/icons/
+
+  fonts:
+    - family: SF-Pro-Display
+      fonts:
+        - asset: assets/fonts/SF_Pro_Display/SF-Pro-Display-Black.otf
+        - asset: assets/fonts/SF_Pro_Display/SF-Pro-Display-Bold.otf
+        - asset: assets/fonts/SF_Pro_Display/SF-Pro-Display-Heavy.otf
+        - asset: assets/fonts/SF_Pro_Display/SF-Pro-Display-Light.otf
+        - asset: assets/fonts/SF_Pro_Display/SF-Pro-Display-Medium.otf
+        - asset: assets/fonts/SF_Pro_Display/SF-Pro-Display-Regular.otf
+        - asset: assets/fonts/SF_Pro_Display/SF-Pro-Display-SemiBold.otf
+        - asset: assets/fonts/SF_Pro_Display/SF-Pro-Display-Thin.otf
+        - asset: assets/fonts/SF_Pro_Display/SF-Pro-Display-Ultralight.otf
+
+flutter_gen:
+  output: lib/src/utils/gen/
+  integrations:
+    flutter_svg: true
+  assets:
+    enabled: true
+    outputs:
+      class_name: AssetsToken
+  fonts:
+    enabled: true
+    outputs:
+      class_name: FontFamily
