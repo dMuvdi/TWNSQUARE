@@ -1,36 +1,25 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:twn_square/src/utils/gen/assets.gen.dart';
-import '../src/utils/gen/fonts.gen.dart';
+import 'package:twn_square/app/screens/mobile/home_view.dart';
+import 'package:twn_square/app/screens/web/home_view.dart';
+import 'package:twn_square/src/utils/gen/fonts.gen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'TwnSquare',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primarySwatch: Colors.lightBlue,
+        fontFamily: FontFamily.sFProDisplay,
         useMaterial3: true,
       ),
-      home: Scaffold(
-        body: Center(
-            child: Row(
-          children: [
-            const Text(
-              "Twnsquare",
-              style: TextStyle(
-                  fontFamily: FontFamily.sFProDisplay,
-                  fontSize: 50,
-                  fontWeight: FontWeight.w500),
-            ),
-            AssetsToken.icons.map
-                .svg(width: 50, height: 50, color: Colors.black),
-          ],
-        )),
-      ),
+      defaultTransition: Transition.fadeIn,
+      navigatorKey: Get.key,
+      transitionDuration: const Duration(milliseconds: 300),
+      home: kIsWeb ? const WebHomeView() : const MobileHomeView(),
     );
   }
 }
