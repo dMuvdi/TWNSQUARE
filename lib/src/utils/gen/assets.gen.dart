@@ -19,9 +19,12 @@ class $AssetsIconsGen {
   SvgGenImage get map => const SvgGenImage('assets/icons/map.svg');
   SvgGenImage get star => const SvgGenImage('assets/icons/star.svg');
   SvgGenImage get users => const SvgGenImage('assets/icons/users.svg');
+  SvgGenImage get map_pin => const SvgGenImage('assets/icons/map-pin.svg');
+  SvgGenImage get user => const SvgGenImage('assets/icons/user.svg');
+
 
   /// List of all assets
-  List<SvgGenImage> get values => [bell, calendar, map, star, users];
+  List<SvgGenImage> get values => [bell, calendar, map, star, users, map_pin];
 }
 
 class AssetsToken {
