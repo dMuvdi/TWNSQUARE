@@ -84,94 +84,102 @@ class MobileHomeView extends GetView<HomeViewController> {
                     decoration: BoxDecoration(
                         color: const Color(0xFFBAE6FD),
                         borderRadius: BorderRadius.circular(10.0)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              'You\'re close to your goal!',
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w600),
-                            ),
-                            const Text(
-                              'Join more sport activities to collect more points',
-                              style: TextStyle(
-                                  fontSize: 12.5, fontWeight: FontWeight.w400),
-                            ),
-                            const SizedBox(
-                              height: 10.0,
-                            ),
-                            Row(
-                              children: [
-                                ElevatedButton(
-                                    onPressed: () {},
-                                    style: ElevatedButton.styleFrom(
-                                      tapTargetSize:
-                                          MaterialTapTargetSize.shrinkWrap,
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 10.0),
-                                      backgroundColor: Colors.black,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(4),
+                    child: FittedBox(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                'You\'re close to your goal!',
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w600),
+                              ),
+                              const Text(
+                                'Join more sport activities to collect more points',
+                                style: TextStyle(
+                                    fontSize: 12.5,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                              const SizedBox(
+                                height: 10.0,
+                              ),
+                              Row(
+                                children: [
+                                  ElevatedButton(
+                                      onPressed: () {},
+                                      style: ElevatedButton.styleFrom(
+                                        tapTargetSize:
+                                            MaterialTapTargetSize.shrinkWrap,
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 10.0),
+                                        backgroundColor: Colors.black,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(4),
+                                        ),
+                                        minimumSize:
+                                            const Size(1, 23), // width, height
                                       ),
-                                      minimumSize:
-                                          const Size(1, 23), // width, height
-                                    ),
-                                    child: const Text(
-                                      "Join now",
-                                      style: TextStyle(
-                                          fontFamily: FontFamily.sFProDisplay,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.white),
-                                    )),
-                                const SizedBox(
-                                  width: 10.0,
-                                ),
-                                ElevatedButton(
-                                    onPressed: () {},
-                                    style: ElevatedButton.styleFrom(
-                                      tapTargetSize:
-                                          MaterialTapTargetSize.shrinkWrap,
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 10.0),
-                                      backgroundColor: Colors.black,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(4),
+                                      child: const Text(
+                                        "Join now",
+                                        style: TextStyle(
+                                            fontFamily: FontFamily.sFProDisplay,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.white),
+                                      )),
+                                  const SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  ElevatedButton(
+                                      onPressed: () {},
+                                      style: ElevatedButton.styleFrom(
+                                        tapTargetSize:
+                                            MaterialTapTargetSize.shrinkWrap,
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 10.0),
+                                        backgroundColor: Colors.black,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(4),
+                                        ),
+                                        minimumSize:
+                                            const Size(1, 23), // width, height
                                       ),
-                                      minimumSize:
-                                          const Size(1, 23), // width, height
-                                    ),
-                                    child: const Text(
-                                      "My points",
-                                      style: TextStyle(
-                                          fontFamily: FontFamily.sFProDisplay,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.white),
-                                    )),
-                              ],
-                            )
-                          ],
-                        ),
-                        CircularPercentIndicator(
-                          radius: 35,
-                          lineWidth: 6.0,
-                          percent: 0.60,
-                          backgroundColor: Colors.white,
-                          circularStrokeCap: CircularStrokeCap.round,
-                          progressColor: const Color(0xFF6ABEF6),
-                          center: const Text(
-                            '27',
-                            style: TextStyle(
-                                fontFamily: FontFamily.sFProDisplay,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 25),
+                                      child: const Text(
+                                        "My points",
+                                        style: TextStyle(
+                                            fontFamily: FontFamily.sFProDisplay,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.white),
+                                      )),
+                                ],
+                              )
+                            ],
                           ),
-                        ),
-                      ],
+                          const SizedBox(
+                            width: 10.0,
+                          ),
+                          CircularPercentIndicator(
+                            radius: 35,
+                            lineWidth: 6.0,
+                            percent: 0.60,
+                            backgroundColor: Colors.white,
+                            circularStrokeCap: CircularStrokeCap.round,
+                            progressColor: const Color(0xFF6ABEF6),
+                            center: const Text(
+                              '27',
+                              style: TextStyle(
+                                  fontFamily: FontFamily.sFProDisplay,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 25),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

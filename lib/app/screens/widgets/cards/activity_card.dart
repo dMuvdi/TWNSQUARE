@@ -62,226 +62,230 @@ class ActivityCard extends StatelessWidget {
                 ]),
             child: !isShowing
                 ? const SizedBox.shrink()
-                : Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Row(
-                            children: [
-                              AutoSizeText(
-                                DateFormat('HH:mm')
-                                    .format(time ?? DateTime.now()),
-                                style: TextStyle(
-                                    fontSize: screenWidth > 700 ? 14 : 12,
-                                    fontFamily: FontFamily.sFProDisplay,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.black),
-                              ),
-                              const SizedBox(
-                                width: 5.0,
-                              ),
-                              AutoSizeText(
-                                '($duration min)',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: screenWidth > 700 ? 16 : 14,
-                                    fontFamily: FontFamily.sFProDisplay,
-                                    color: const Color(0xFFADB5BD)),
-                              ),
-                            ],
-                          ),
-                          AutoSizeText(
-                            title ?? '',
-                            style: TextStyle(
-                                fontFamily: FontFamily.sFProDisplay,
-                                fontSize: screenWidth > 700 ? 20 : 18,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.black),
-                          ),
-                          Row(
-                            children: [
-                              AssetsToken.icons.map_pin.svg(
-                                  color: const Color(0xFFADB5BD),
-                                  width: 13.5,
-                                  height: 13.5),
-                              const SizedBox(
-                                width: 4.0,
-                              ),
-                              AutoSizeText(
-                                location ?? '',
-                                style: TextStyle(
-                                    fontFamily: FontFamily.sFProDisplay,
-                                    fontSize: screenWidth > 700 ? 16 : 14,
-                                    fontWeight: FontWeight.w500,
-                                    color: const Color(0xFFADB5BD)),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 5.0,
-                          ),
-                          Row(
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 5.0, vertical: 2.0),
-                                decoration: BoxDecoration(
-                                    color: const Color(0xFFE9ECEF),
-                                    borderRadius: BorderRadius.circular(2)),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    AssetsToken.icons.user.svg(
-                                      width: 10,
-                                      height: 10,
-                                      color: const Color(0xFFADB5BD),
-                                    ),
-                                    const SizedBox(
-                                      width: 4.0,
-                                    ),
-                                    AutoSizeText("$spotsLeft spots left",
-                                        style: TextStyle(
-                                            fontFamily: FontFamily.sFProDisplay,
-                                            fontSize:
-                                                screenWidth > 700 ? 12 : 10,
-                                            fontWeight: FontWeight.w500,
-                                            color: const Color(0xFFADB5BD)))
-                                  ],
+                : FittedBox(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Row(
+                              children: [
+                                AutoSizeText(
+                                  DateFormat('HH:mm')
+                                      .format(time ?? DateTime.now()),
+                                  style: TextStyle(
+                                      fontSize: screenWidth > 700 ? 14 : 12,
+                                      fontFamily: FontFamily.sFProDisplay,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black),
                                 ),
-                              ),
-                              const SizedBox(
-                                width: 5.0,
-                              ),
-                              SizedBox(
-                                height: 20,
-                                width: 135,
-                                child: ListView.builder(
-                                    physics:
-                                        const NeverScrollableScrollPhysics(),
-                                    scrollDirection: Axis.horizontal,
-                                    itemCount: tags?.length,
-                                    itemBuilder: (context, index) {
-                                      return Padding(
-                                        padding:
-                                            const EdgeInsets.only(right: 5.0),
-                                        child: Container(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 5.0, vertical: 2.0),
-                                          decoration: BoxDecoration(
-                                              color: tags?[index] == 'light'
-                                                  ? MainColors.lightIntensity
-                                                  : tags?[index] == 'medium'
-                                                      ? MainColors
-                                                          .mediumIntensity
-                                                      : tags?[index] == 'high'
-                                                          ? MainColors
-                                                              .highIntensity
-                                                          : tags?[index] ==
-                                                                  'vey high'
-                                                              ? MainColors
-                                                                  .veryHighItensity
-                                                              : tags?[index] ==
-                                                                      'workspace'
-                                                                  ? MainColors
-                                                                      .workSpace
-                                                                  : MainColors
-                                                                      .childCareTag,
-                                              borderRadius:
-                                                  BorderRadius.circular(2)),
-                                          child: Center(
-                                            child: AutoSizeText(tags?[index],
-                                                style: TextStyle(
-                                                  fontFamily:
-                                                      FontFamily.sFProDisplay,
-                                                  fontSize: screenWidth > 700
-                                                      ? 12
-                                                      : 10,
-                                                  fontWeight: FontWeight.w700,
-                                                  color: tags?[index] == 'light'
-                                                      ? darken(
-                                                          MainColors
-                                                              .lightIntensity,
-                                                          0.5)
-                                                      : tags?[index] == 'medium'
-                                                          ? darken(
-                                                              MainColors
-                                                                  .mediumIntensity,
-                                                              0.5)
-                                                          : tags?[index] ==
-                                                                  'high'
-                                                              ? darken(
-                                                                  MainColors
-                                                                      .highIntensity,
-                                                                  0.5)
-                                                              : tags?[index] ==
-                                                                      'vey high'
-                                                                  ? darken(
-                                                                      MainColors
-                                                                          .veryHighItensity,
-                                                                      0.5)
-                                                                  : tags?[index] ==
-                                                                          'workspace'
-                                                                      ? darken(
-                                                                          MainColors
-                                                                              .workSpace,
-                                                                          0.5)
-                                                                      : darken(
-                                                                          MainColors
-                                                                              .childCareTag,
-                                                                          0.5),
-                                                )),
-                                          ),
-                                        ),
-                                      );
-                                    }),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          AutoSizeText(
-                            "9€",
-                            style: TextStyle(
-                                fontFamily: FontFamily.sFProDisplay,
-                                fontSize: screenWidth > 700 ? 20 : 18,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.black),
-                          ),
-                          const SizedBox(
-                            height: 30,
-                          ),
-                          SizedBox(
-                            width: 75,
-                            height: 35,
-                            child: ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.black,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(6),
-                                  ),
-                                  minimumSize: const Size.fromHeight(40),
+                                const SizedBox(
+                                  width: 5.0,
                                 ),
-                                child: const AutoSizeText(
-                                  "Join",
+                                AutoSizeText(
+                                  '($duration min)',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: screenWidth > 700 ? 16 : 14,
+                                      fontFamily: FontFamily.sFProDisplay,
+                                      color: const Color(0xFFADB5BD)),
+                                ),
+                              ],
+                            ),
+                            AutoSizeText(
+                              title ?? '',
+                              style: TextStyle(
+                                  fontFamily: FontFamily.sFProDisplay,
+                                  fontSize: screenWidth > 700 ? 20 : 18,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black),
+                            ),
+                            Row(
+                              children: [
+                                AssetsToken.icons.map_pin.svg(
+                                    color: const Color(0xFFADB5BD),
+                                    width: 13.5,
+                                    height: 13.5),
+                                const SizedBox(
+                                  width: 4.0,
+                                ),
+                                AutoSizeText(
+                                  location ?? '',
                                   style: TextStyle(
                                       fontFamily: FontFamily.sFProDisplay,
-                                      fontSize: 14,
+                                      fontSize: screenWidth > 700 ? 16 : 14,
                                       fontWeight: FontWeight.w500,
-                                      color: Colors.white),
-                                )),
-                          )
-                        ],
-                      )
-                    ],
+                                      color: const Color(0xFFADB5BD)),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 5.0,
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 5.0, vertical: 2.0),
+                                  decoration: BoxDecoration(
+                                      color: const Color(0xFFE9ECEF),
+                                      borderRadius: BorderRadius.circular(2)),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      AssetsToken.icons.user.svg(
+                                        width: 10,
+                                        height: 10,
+                                        color: const Color(0xFFADB5BD),
+                                      ),
+                                      const SizedBox(
+                                        width: 4.0,
+                                      ),
+                                      AutoSizeText("$spotsLeft spots left",
+                                          style: TextStyle(
+                                              fontFamily:
+                                                  FontFamily.sFProDisplay,
+                                              fontSize:
+                                                  screenWidth > 700 ? 12 : 10,
+                                              fontWeight: FontWeight.w500,
+                                              color: const Color(0xFFADB5BD)))
+                                    ],
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 5.0,
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                  width: 135,
+                                  child: ListView.builder(
+                                      physics:
+                                          const NeverScrollableScrollPhysics(),
+                                      scrollDirection: Axis.horizontal,
+                                      itemCount: tags?.length,
+                                      itemBuilder: (context, index) {
+                                        return Padding(
+                                          padding:
+                                              const EdgeInsets.only(right: 5.0),
+                                          child: Container(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 5.0, vertical: 2.0),
+                                            decoration: BoxDecoration(
+                                                color: tags?[index] == 'light'
+                                                    ? MainColors.lightIntensity
+                                                    : tags?[index] == 'medium'
+                                                        ? MainColors
+                                                            .mediumIntensity
+                                                        : tags?[index] == 'high'
+                                                            ? MainColors
+                                                                .highIntensity
+                                                            : tags?[index] ==
+                                                                    'vey high'
+                                                                ? MainColors
+                                                                    .veryHighItensity
+                                                                : tags?[index] ==
+                                                                        'workspace'
+                                                                    ? MainColors
+                                                                        .workSpace
+                                                                    : MainColors
+                                                                        .childCareTag,
+                                                borderRadius:
+                                                    BorderRadius.circular(2)),
+                                            child: Center(
+                                              child: AutoSizeText(tags?[index],
+                                                  style: TextStyle(
+                                                    fontFamily:
+                                                        FontFamily.sFProDisplay,
+                                                    fontSize: screenWidth > 700
+                                                        ? 12
+                                                        : 10,
+                                                    fontWeight: FontWeight.w700,
+                                                    color: tags?[index] ==
+                                                            'light'
+                                                        ? darken(
+                                                            MainColors
+                                                                .lightIntensity,
+                                                            0.5)
+                                                        : tags?[index] ==
+                                                                'medium'
+                                                            ? darken(
+                                                                MainColors
+                                                                    .mediumIntensity,
+                                                                0.5)
+                                                            : tags?[index] ==
+                                                                    'high'
+                                                                ? darken(
+                                                                    MainColors
+                                                                        .highIntensity,
+                                                                    0.5)
+                                                                : tags?[index] ==
+                                                                        'vey high'
+                                                                    ? darken(
+                                                                        MainColors
+                                                                            .veryHighItensity,
+                                                                        0.5)
+                                                                    : tags?[index] ==
+                                                                            'workspace'
+                                                                        ? darken(
+                                                                            MainColors
+                                                                                .workSpace,
+                                                                            0.5)
+                                                                        : darken(
+                                                                            MainColors.childCareTag,
+                                                                            0.5),
+                                                  )),
+                                            ),
+                                          ),
+                                        );
+                                      }),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            AutoSizeText(
+                              "9€",
+                              style: TextStyle(
+                                  fontFamily: FontFamily.sFProDisplay,
+                                  fontSize: screenWidth > 700 ? 20 : 18,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black),
+                            ),
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            SizedBox(
+                              width: 75,
+                              height: 35,
+                              child: ElevatedButton(
+                                  onPressed: () {},
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.black,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(6),
+                                    ),
+                                    minimumSize: const Size.fromHeight(40),
+                                  ),
+                                  child: const AutoSizeText(
+                                    "Join",
+                                    style: TextStyle(
+                                        fontFamily: FontFamily.sFProDisplay,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.white),
+                                  )),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
                   ),
           );
         }),

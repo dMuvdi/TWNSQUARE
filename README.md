@@ -23,5 +23,30 @@
 
 2. **Clone the Repository:**
    ```bash
-   git clone [https://github.com/https://github.com/dMuvdi/TWNSQUARE.git](https://github.com/dMuvdi/TWNSQUARE.git)
+   git clone https://github.com/https://github.com/dMuvdi/TWNSQUARE.git(https://github.com/dMuvdi/TWNSQUARE.git)
    ````
+
+3. **Navigate to the Project Directory:**
+   * Use the cd command to navigate to the cloned project directory:
+   ```bash
+   cd twn_square
+   ````
+
+4. **Get Dependencies:**
+   * Run the following command to fetch the necessary packages:
+   ```bash
+   flutter pub get
+   ````
+
+5. **Open the Project in Your IDE:**
+   * Open your chosen IDE (Android Studio or VS Code).
+   * Open the cloned project directory.
+
+6. **Run the App:** 
+   * Android Studio:
+      * Click the "Run" button or press Shift+F10.
+      * Select your desired emulator or connected device.
+   * VS Code:
+      * Open the command palette (Ctrl+Shift+P or Cmd+Shift+P).
+      * Type "Flutter: Run" and select.
+      * Choose your target device.
