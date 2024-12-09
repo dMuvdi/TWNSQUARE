@@ -233,6 +233,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  dash:
+    dependency: "direct main"
+    description:
+      name: dash
+      sha256: "32b954bdc1f350d2e80728f738bb42e042874755e578c06cb21e32e4f84b9b82"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.5"
   fake_async:
     dependency: transitive
     description:
@@ -294,6 +302,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_dash:
+    dependency: "direct main"
+    description:
+      name: flutter_dash
+      sha256: dc282109cc12806853e102a4e8b9d99abb7f527fcedec2ea03860e2500ee6622
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   flutter_gen_core:
     dependency: transitive
     description:
@@ -456,6 +472,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.0"
+  intl:
+    dependency: "direct main"
+    description:
+      name: intl
+      sha256: "99f282cb0e02edcbbf8c6b3bbc7c90b65635156c412e58f3975a7e55284ce685"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.20.0"
   io:
     dependency: transitive
     description:
@@ -624,6 +648,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.0"
+  percent_indicator:
+    dependency: "direct main"
+    description:
+      name: percent_indicator
+      sha256: "0d77d5c6fa9b7f60202cedf748b568ba9ba38d3f30405d6ceae4da76f5185462"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.4"
   petitparser:
     dependency: transitive
     description:

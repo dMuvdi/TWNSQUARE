@@ -8,6 +8,7 @@ class Activity {
   int availableSpots;
   int price;
   List<dynamic> tags;
+  bool isShowing;
 
   Activity({
     required this.time,
@@ -17,6 +18,7 @@ class Activity {
     required this.availableSpots,
     required this.price,
     required this.tags,
+    this.isShowing = true,
   });
 
   factory Activity.fromMap(Map<String, dynamic> map) {
@@ -28,6 +30,7 @@ class Activity {
       availableSpots: map['available_spots'],
       price: map['price'],
       tags: map['tags'],
+      isShowing: map['is_showing']
     );
   }
 
@@ -40,6 +43,7 @@ class Activity {
       'availableSpots': availableSpots,
       'price': price,
       'tags': jsonEncode(tags),
+      'is_showing': isShowing
     };
   }
 }

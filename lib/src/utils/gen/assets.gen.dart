@@ -21,7 +21,7 @@ class $AssetsIconsGen {
   SvgGenImage get users => const SvgGenImage('assets/icons/users.svg');
   SvgGenImage get map_pin => const SvgGenImage('assets/icons/map-pin.svg');
   SvgGenImage get user => const SvgGenImage('assets/icons/user.svg');
-
+  SvgGenImage get search => const SvgGenImage('assets/icons/search.svg');
 
   /// List of all assets
   List<SvgGenImage> get values => [bell, calendar, map, star, users, map_pin];
