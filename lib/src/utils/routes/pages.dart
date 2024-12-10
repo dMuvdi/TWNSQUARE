@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:twn_square/app/screens/mobile/home_view_binding.dart';
 import 'package:twn_square/app/screens/mobile/layout/layout_screen.dart';
 import 'package:twn_square/app/screens/web/home_view.dart';
+import 'package:twn_square/app/screens/web/home_view_binding.dart';
 import 'package:twn_square/src/utils/routes/routes.dart';
 
 abstract class Pages {
@@ -18,7 +19,7 @@ abstract class Pages {
     GetPage(
       name: MainRoutes.home_web, 
       page: () => const WebHomeView(),
-      binding: HomeViewBinding(),
+      binding: HomeViewBindingWeb(),
       transition: Transition.fadeIn,
       curve: Curves.easeInOut
     ),

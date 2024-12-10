@@ -23,6 +23,7 @@ dependencies:
   percent_indicator: ^4.2.4
   dash: ^1.0.5
   flutter_dash: ^1.0.0
+  avatar_stack: ^1.2.0
   
 
 dev_dependencies:
