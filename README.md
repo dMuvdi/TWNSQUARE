@@ -50,3 +50,9 @@
       * Open the command palette (Ctrl+Shift+P or Cmd+Shift+P).
       * Type "Flutter: Run" and select.
       * Choose your target device.
+
+### Checking the Web App
+
+To check the web app head over to this link to visualize a preivew of the web view live in a firebase hosting:
+
+[https://twnsquare-3b8ab.web.app/#/home_web](https://twnsquare-3b8ab.web.app/#/home_web)
