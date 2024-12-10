@@ -23,7 +23,7 @@
 
 2. **Clone the Repository:**
    ```bash
-   git clone https://github.com/https://github.com/dMuvdi/TWNSQUARE.git(https://github.com/dMuvdi/TWNSQUARE.git)
+   git clone [https://github.com/dMuvdi/TWNSQUARE.git](https://github.com/dMuvdi/TWNSQUARE.git)
    ````
 
 3. **Navigate to the Project Directory:**
