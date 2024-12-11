@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:twn_square/environments.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -47,7 +48,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDKv92Ft_jFT2jhRWrfIcAX99Uw5CBt5oc',
+    apiKey: Environment.webAppKey,
     appId: '1:1088144608378:web:c494063dbc32e94e633fc3',
     messagingSenderId: '1088144608378',
     projectId: 'twnsquare-3b8ab',
@@ -57,7 +58,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDezVunUVCutfylyP_wfl-e-xgWAXqQanA',
+    apiKey: Environment.androidAppKey,
     appId: '1:1088144608378:android:8fd93b6c14e105f8633fc3',
     messagingSenderId: '1088144608378',
     projectId: 'twnsquare-3b8ab',
@@ -65,7 +66,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCbOtJx99DYR25Q8ejCQwRyDR7wCiiVi4g',
+    apiKey: Environment.iosAppKey,
     appId: '1:1088144608378:ios:4edbb42d23444aa6633fc3',
     messagingSenderId: '1088144608378',
     projectId: 'twnsquare-3b8ab',
