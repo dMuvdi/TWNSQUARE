@@ -32,6 +32,10 @@ migrate_working_dir/
 /build/
 .vscode
 .env
+.firebase
+/android/app/google-services.json
+/ios/Runner/GoogleService-Info.plist
+.fireabserc
 
 # Symbolication related
 app.*.symbols
