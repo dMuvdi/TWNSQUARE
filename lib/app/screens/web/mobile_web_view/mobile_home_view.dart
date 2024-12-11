@@ -321,7 +321,7 @@ class MobileWebHomeView extends GetView<HomeViewControllerWeb> {
                                               .filteredActivities
                                               .map((Activity activity) =>
                                                   ActivityCard(
-                                                    isWeb: true,
+                                                    isWeb: false,
                                                     title: activity.title,
                                                     time: activity.time,
                                                     duration: activity

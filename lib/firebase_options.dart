@@ -73,4 +73,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'twnsquare-3b8ab.firebasestorage.app',
     iosBundleId: 'com.example.twnSquare',
   );
+
 }

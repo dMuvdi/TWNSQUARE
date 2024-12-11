@@ -359,7 +359,7 @@ class MobileHomeView extends GetView<HomeViewController> {
                                         children: controller.filteredActivities
                                             .map((Activity activity) =>
                                                 ActivityCard(
-                                                  isWeb: true,
+                                                  isWeb: false,
                                                   title: activity.title,
                                                   time: activity.time,
                                                   duration:

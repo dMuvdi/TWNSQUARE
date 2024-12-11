@@ -56,3 +56,7 @@
 To check the web app head over to this link to visualize a preivew of the web view live in a firebase hosting:
 
 [https://twnsquare-3b8ab.web.app/#/home_web](https://twnsquare-3b8ab.web.app/#/home_web)
+
+## What would I improve with more time?
+
+Given more time, I would prioritize implementing a robust dark mode feature. This would enhance user experience by providing a visually comfortable option for nighttime usage or personal preference. By carefully considering color schemes, contrast ratios, and accessibility guidelines, I would ensure a seamless transition between light and dark modes, making the application adaptable to various lighting conditions and user preferences.
