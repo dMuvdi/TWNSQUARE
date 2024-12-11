@@ -5,6 +5,7 @@ import 'dart:math' as math;
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:twn_square/app/screens/mobile/screens/home_view_controller.dart';
 import 'package:twn_square/app/screens/widgets/cards/activity_card.dart';
 import 'package:twn_square/src/constants/colors.dart';
@@ -352,11 +353,13 @@ class MobileHomeView extends GetView<HomeViewController> {
                                     ],
                                   ),
                                 ),
-                                Obx(() => Column(
-                                    children: controller.filteredActivities
-                                        .map(
-                                            (Activity activity) => ActivityCard(
-                                                  isWeb: false,
+                                Obx(() => controller.activities.isNotEmpty
+                                    ? Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: controller.filteredActivities
+                                            .map((Activity activity) =>
+                                                ActivityCard(
+                                                  isWeb: true,
                                                   title: activity.title,
                                                   time: activity.time,
                                                   duration:
@@ -368,7 +371,35 @@ class MobileHomeView extends GetView<HomeViewController> {
                                                   tags: activity.tags,
                                                   isShowing: activity.isShowing,
                                                 ))
-                                        .toList())),
+                                            .toList())
+                                    : Column(
+                                        children: List.generate(
+                                            4,
+                                            (index) => Padding(
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                      horizontal: 20.0,
+                                                      vertical: 10.0),
+                                                  child: Shimmer.fromColors(
+                                                    baseColor: Colors.grey,
+                                                    highlightColor:
+                                                        Colors.white,
+                                                    child: Container(
+                                                      width: Get.width,
+                                                      height: 145,
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            const BorderRadius
+                                                                .all(
+                                                                Radius.circular(
+                                                                    10.0)),
+                                                        color: Colors.black
+                                                            .withOpacity(0.5),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                )),
+                                      )),
                               ],
                             ),
                           ),

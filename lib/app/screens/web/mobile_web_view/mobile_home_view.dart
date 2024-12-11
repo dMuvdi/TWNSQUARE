@@ -5,6 +5,7 @@ import 'package:flutter_dash/flutter_dash.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:twn_square/app/screens/widgets/filtering/filter_chips_custom.dart';
 import 'package:twn_square/app/screens/widgets/side_bar/side_bar.dart';
 import 'package:twn_square/src/models/activity.dart';
@@ -312,23 +313,57 @@ class MobileWebHomeView extends GetView<HomeViewControllerWeb> {
                           Padding(
                             padding:
                                 const EdgeInsets.only(left: 35.0, right: 10.0),
-                            child: Obx(() => Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: controller.filteredActivities
-                                    .map((Activity activity) => ActivityCard(
-                                          isWeb: constraints.maxWidth < 513
-                                              ? false
-                                              : true,
-                                          title: activity.title,
-                                          time: activity.time,
-                                          duration: activity.durationMinutes,
-                                          location: activity.location,
-                                          price: activity.price,
-                                          spotsLeft: activity.availableSpots,
-                                          tags: activity.tags,
-                                          isShowing: activity.isShowing,
-                                        ))
-                                    .toList())),
+                            child: Obx(() => controller
+                                          .activities.isNotEmpty
+                                      ? Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: controller
+                                              .filteredActivities
+                                              .map((Activity activity) =>
+                                                  ActivityCard(
+                                                    isWeb: true,
+                                                    title: activity.title,
+                                                    time: activity.time,
+                                                    duration: activity
+                                                        .durationMinutes,
+                                                    location: activity.location,
+                                                    price: activity.price,
+                                                    spotsLeft:
+                                                        activity.availableSpots,
+                                                    tags: activity.tags,
+                                                    isShowing:
+                                                        activity.isShowing,
+                                                  ))
+                                              .toList())
+                                      : Column(
+                                          children: List.generate(
+                                              4,
+                                              (index) => Padding(
+                                                    padding: const EdgeInsets
+                                                        .symmetric(
+                                                        horizontal: 20.0,
+                                                        vertical: 10.0),
+                                                    child: Shimmer.fromColors(
+                                                      baseColor: Colors.grey,
+                                                      highlightColor:
+                                                          Colors.white,
+                                                      child: Container(
+                                                        width: Get.width,
+                                                        height: 145,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          borderRadius:
+                                                              const BorderRadius
+                                                                  .all(Radius
+                                                                      .circular(
+                                                                          10.0)),
+                                                          color: Colors.black
+                                                              .withOpacity(0.5),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  )),
+                                        )),
                           ),
                         ],
                       ),
