@@ -5,13 +5,13 @@ import 'dart:math' as math;
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:twn_square/app/screens/mobile/home_view_controller.dart';
+import 'package:twn_square/app/screens/mobile/screens/home_view_controller.dart';
 import 'package:twn_square/app/screens/widgets/cards/activity_card.dart';
 import 'package:twn_square/src/constants/colors.dart';
 import 'package:twn_square/src/utils/gen/assets.gen.dart';
 import 'package:twn_square/src/utils/gen/fonts.gen.dart';
 
-import '../../../src/models/activity.dart';
+import '../../../../src/models/activity.dart';
 
 class MobileHomeView extends GetView<HomeViewController> {
   const MobileHomeView({super.key});
@@ -207,6 +207,7 @@ class MobileHomeView extends GetView<HomeViewController> {
                       onTapOutside: (event) {
                         FocusScope.of(Get.context!).unfocus();
                       },
+                      onChanged: (value) => controller.getSearch(value),
                       cursorColor: Colors.lightBlue,
                       decoration: InputDecoration(
                         contentPadding: const EdgeInsets.symmetric(
@@ -355,7 +356,7 @@ class MobileHomeView extends GetView<HomeViewController> {
                                     children: controller.filteredActivities
                                         .map(
                                             (Activity activity) => ActivityCard(
-                                              isWeb: false,
+                                                  isWeb: false,
                                                   title: activity.title,
                                                   time: activity.time,
                                                   duration:

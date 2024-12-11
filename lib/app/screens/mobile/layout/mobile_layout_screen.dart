@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:twn_square/app/screens/mobile/home_view.dart';
+import 'package:twn_square/app/screens/mobile/screens/home_view.dart';
 
 import '../../../../src/shared/bottom_navigation_bar.dart';
 
-class LayoutScreen extends StatelessWidget {
-  const LayoutScreen({super.key});
+class MobileLayoutScreen extends StatelessWidget {
+  const MobileLayoutScreen({super.key});
 
   @override
   Widget build(BuildContext context) => const Scaffold(

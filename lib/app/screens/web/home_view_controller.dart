@@ -19,6 +19,7 @@ class HomeViewControllerWeb extends GetxController {
 
   RxInt waitingTime = 0.obs;
   Timer? _timer;
+  RxString searchTerm = ''.obs;
 
   final isFiltering = true.obs;
 
@@ -79,25 +80,39 @@ class HomeViewControllerWeb extends GetxController {
     }
   }
 
-  List<Activity> get filteredActivities {
-    if (selectedFilters.isEmpty) {
-    // Show all activities, set is_showing to true for all
-    for (var activity in activities) {
-      activity.isShowing = true;
-    }
-    return activities;
-  } else {
-    // Filter activities and update is_showing
-    return activities.map((activity) {
-      activity.isShowing = activity.tags.any(selectedFilters
-          .map((filter) => filterToTagsMap[filter])
-          .toList()
-          .expand((list) => list as Iterable<dynamic>)
-          .toList()
-          .contains);
-      return activity;
-    }).toList();
+  void getSearch(String value) {
+    searchTerm.value = value;
   }
+
+  List<Activity> get filteredActivities {
+    if (selectedFilters.isEmpty && searchTerm.isEmpty) {
+      // Show all activities, set is_showing to true for all
+      for (var activity in activities) {
+        activity.isShowing = true;
+      }
+      return activities;
+    } else {
+      if (searchTerm.isNotEmpty) {
+        searchTerm
+            .toLowerCase(); // Get the search term (lowercase for case-insensitive search)
+        // Filter activities and update is_showing
+        return activities.map((activity) {
+          activity.isShowing = activity.title.toLowerCase().contains(searchTerm);
+          return activity;
+        }).toList(); // Set is_showing for filtered activities
+      } else {
+        // Filter activities and update is_showing
+        return activities.map((activity) {
+          activity.isShowing = activity.tags.any(selectedFilters
+              .map((filter) => filterToTagsMap[filter])
+              .toList()
+              .expand((list) => list as Iterable<dynamic>)
+              .toList()
+              .contains);
+          return activity;
+        }).toList();
+      }
+    }
   }
 
   @override
